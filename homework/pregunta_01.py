@@ -2,6 +2,11 @@
 """
 Escriba el codigo que ejecute la accion solicitada.
 """
+from homework._internals.create_visual_for_average_customer_rating import create_visual_for_average_customer_rating
+from homework._internals.create_visual_for_mode_of_shipment import create_visual_for_mode_of_shipment
+from homework._internals.create_visual_for_shipping_per_warehouse import create_visual_for_shipping_per_warehouse
+from homework._internals.create_visual_for_weight_distribution import create_visual_for_weight_distribution
+from homework._internals.load_data import load_data
 
 
 def pregunta_01():
@@ -35,3 +40,16 @@ def pregunta_01():
     * Su código debe crear la carpeta `docs` si no existe.
 
     """
+
+
+    df = load_data()
+    create_visual_for_shipping_per_warehouse(df)
+    create_visual_for_mode_of_shipment(df)
+    create_visual_for_average_customer_rating(df)
+    create_visual_for_weight_distribution(df)
+
+    ## Mostrar el html en el navegador
+    # import webbrowser
+    
+    # nombre_archivo = 'docs\index.html'
+    # webbrowser.open_new_tab(nombre_archivo)
